@@ -9,15 +9,16 @@ import org.springframework.scheduling.annotation.Async;
 @Component
 public class Repository {
  
-    private final Establishment establishment = new Establishment();
+    private Establishment establishment;
 
     @Async
     @EventListener
     public void add(final TaskCard task) {
-        establishment.add(task);
+        // establishment.add(task);
     }
 
     public Set<TaskCard> all() {
-        return establishment.tasks();
+        // return establishment.tasks();
+        return null;
     }
 }
