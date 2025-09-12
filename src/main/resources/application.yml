@@ -9,11 +9,13 @@ spring:
       password: 7a
       username: root
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/7A?useSSL=false&serverTimezone=America/Sao_Paulo
+      url: jdbc:mysql://localhost:3306/7A?useSSL=false&serverTimezone=America/Sao_Paulo&allowPublicKeyRetrieval=true
 
   jpa:
     hibernate:
       ddl-auto: validate
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
 
 # Actuator
 management:

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/establishment")
-public class ReadTaskCardsHttpResource {
+public class ReadOneHttpResource {
     
     private final DaoEstablishmentTable dao;
 
@@ -24,10 +24,13 @@ public class ReadTaskCardsHttpResource {
             .number(establishment.address().number())
             .zipCode(establishment.address().zipCode())
             .complement(establishment.address().complement())
-            .neighborhood(establishment.address().neighborhood()).build();
+            .neighborhood(establishment.address().neighborhood())
+            .contacts(establishment.contacts().stream().map(contact -> new ContactHttpBodyPart(contact.phone(), contact.areaCode())).toList())
+            .digitalContacts(establishment.digitalContacts().stream().map(digitalContact -> new DigitalContactHttpBodyPart(digitalContact.isWhatsApp(), digitalContact.phone(), digitalContact.areaCode(), digitalContact.email())).toList())
+            .build();
     }
 
-    public ReadTaskCardsHttpResource(final DaoEstablishmentTable dao) {
+    public ReadOneHttpResource(final DaoEstablishmentTable dao) {
         this.dao = dao;
     }
 }

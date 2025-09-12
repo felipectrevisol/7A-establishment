@@ -44,7 +44,7 @@ public final class Establishment {
         return contacts;
     }
 
-    public List<DigitalContact> digitalContact() {
+    public List<DigitalContact> digitalContacts() {
         return digitalContact;
     }
 
