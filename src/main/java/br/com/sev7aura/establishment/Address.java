@@ -34,17 +34,17 @@ public class Address {
     public String city() {
         return city;
     }
-
-    public String zipCode() {
-        return zipCode;
-    }
-    
+ 
     public String number() {
         return number;
     }
     
     public String street() {
         return street;
+    }
+    
+    public String zipCode() {
+        return zipCode;
     }
     
     public String complement() {
