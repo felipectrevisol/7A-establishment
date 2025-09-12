@@ -2,6 +2,8 @@ package br.com.sev7aura.establishment.task.httpresource;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;
+
+import br.com.sev7aura.establishment.httpresource.AddTaskCardsHttpResource;
 import br.com.sev7aura.establishment.task.TaskCardAdder;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package br.com.sev7aura.establishment.task.httpresource;
+package br.com.sev7aura.establishment.httpresource;
 
 import org.springframework.http.HttpStatus;
 import br.com.sev7aura.establishment.task.TaskCardAdder;
@@ -21,6 +21,6 @@ public class AddTaskCardsHttpResource {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void post(@RequestBody HttpBody httpBody) {
-        this.adder.add(httpBody.payload());
+        // this.adder.add(httpBody.payload());
     }
 }
