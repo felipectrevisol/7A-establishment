@@ -1,6 +1,5 @@
 package br.com.sev7aura.establishment.httpresource;
 
-import br.com.sev7aura.establishment.Establishment;
 import org.springframework.web.bind.annotation.GetMapping;
 import br.com.sev7aura.establishment.DaoEstablishmentTable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +13,7 @@ public class ReadTaskCardsHttpResource {
 
     @GetMapping
     public HttpBody get() {
-        var establishments = dao.findByFantasyName("DROPSPORTS");
-        final Establishment establishment = establishments.get(0);
+        var establishment = dao.findOneByFantasyName("DROPSPORTS");
 
         return HttpBody.builder()
             .id(establishment.id())
