@@ -1,5 +1,7 @@
 package br.com.sev7aura.establishment;
 
+import java.util.UUID;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -25,6 +27,9 @@ public final class DigitalContact {
     @ManyToOne
     @JoinColumn(name = "estabelecimento")
     private Establishment establishment;
+
+    @Id
+    @Column(columnDefinition = "binary(16)") private UUID id;
 
     public String email() {
         return email;

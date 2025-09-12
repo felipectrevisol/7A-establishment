@@ -1,9 +1,10 @@
 package br.com.sev7aura.establishment;
 
+import java.util.UUID;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Column;
-import jakarta.persistence.Embedded;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.JoinColumn;
 
@@ -21,15 +22,15 @@ public final class Contact {
     @JoinColumn(name = "estabelecimento")
     private Establishment establishment;
 
-    @Embedded
-    private Address address;
-    
-    public String areaCode() {
-        return areaCode;
-    }
+    @Id
+    @Column(columnDefinition = "binary(16)") private UUID id;
     
     public String phone() {
         return phone;
+    }
+
+    public String areaCode() {
+        return areaCode;
     }
 
     private Contact() {}
