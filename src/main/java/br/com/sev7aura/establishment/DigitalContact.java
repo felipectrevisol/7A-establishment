@@ -18,7 +18,7 @@ public final class DigitalContact {
     @Column(name = "ddd")
     private String areaCode;
 
-    @Column(name = "telefone")
+    @Column(name = "numero")
     private String phone;
 
     @Column(name = "whatsapp")

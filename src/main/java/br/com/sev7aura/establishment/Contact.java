@@ -12,7 +12,7 @@ import jakarta.persistence.JoinColumn;
 @Table(name = "contatos")
 public final class Contact {
 
-    @Column(name = "telefone")
+    @Column(name = "numero")
     private String phone;
     
     @Column(name = "ddd")
